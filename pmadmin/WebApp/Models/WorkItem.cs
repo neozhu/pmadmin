@@ -17,9 +17,13 @@ namespace WebApp.Models
 
         [Key]
         public int Id { get; set; }
-
+        [MaxLength(255)]
         public string Title { get; set; }
         public string Desc { get; set; }
+        [MaxLength(255)]
+        public string Tags { get; set; }
+        [MaxLength(255)]
+        public string Notes { get; set;}
 
         public int Priority { get; set; }
         public int Effort { get; set; }
@@ -30,9 +34,12 @@ namespace WebApp.Models
 
         public DateTime FromDate { get; set; }
         public DateTime EndDate { get; set; }
-
+        public DateTime? ClosedDate { get; set; }
+        [MaxLength(20)]
         public string Owner { get; set; }
+        [MaxLength(20)]
         public string Creator { get; set; }
+        [MaxLength(20)]
         public string AssignTo { get; set; }
         public int TypeId { get; set; }
         [ForeignKey("TypeId")]

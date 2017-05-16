@@ -11,9 +11,9 @@ namespace WebApp.Models
     {
         [Key]
         public int Id { get; set;}
-        [Index("Idx_Dependency", IsClustered =false, IsUnique =true)]
+        [Index("Idx_Dependency", IsClustered =false, IsUnique =true, Order =1)]
         public int WorkItemId { get; set; }
-        [Index("Idx_Dependency", IsClustered = false, IsUnique = true)]
+        [Index("Idx_Dependency", IsClustered = false, IsUnique = true, Order = 2)]
         public int DependentId { get; set; }
     }
 }

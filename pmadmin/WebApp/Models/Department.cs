@@ -12,7 +12,9 @@ namespace WebApp.Models
     {
         [Key]
         public int Id { get; set; }
+        [MaxLength(50)]
         public string Name { get; set; }
+        [MaxLength(20)]
         public string Manager { get; set; }
         [Display(Name = "所在公司")]
         public int CompanyId { get; set; }
