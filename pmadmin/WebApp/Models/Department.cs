@@ -18,7 +18,7 @@ namespace WebApp.Models
         public int CompanyId { get; set; }
          [ForeignKey("CompanyId")]
          [Display(Name = "所在公司")]
-        public Company Company { get;set;}
+        public virtual Company Company { get;set;}
     }
 
     public partial class Employee:Entity

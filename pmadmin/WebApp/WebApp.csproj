@@ -254,6 +254,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
+    <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\BaseCode.cs" />
     <Compile Include="Models\BaseCodeMetadata.cs" />
     <Compile Include="Models\Category.cs" />
@@ -267,6 +268,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\DepartmentMetadata.cs" />
+    <Compile Include="Models\Discussion.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManagementViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -291,6 +293,9 @@
     <Compile Include="Models\Task.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\WorkItem.cs" />
+    <Compile Include="Models\WorkItemDependency.cs" />
+    <Compile Include="Models\WorkItemType.cs" />
     <Compile Include="Models\WorkMetadata.cs">
       <SubType>Code</SubType>
     </Compile>

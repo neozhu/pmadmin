@@ -17,11 +17,15 @@ namespace WebApp.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        [MaxLength(20)]
+        public string Logo { get; set; }
+        public string Domain { get; set; }
+
         public string Address {get;set;}
         public string City { get; set; }
         public string Province { get; set; }
         public DateTime RegisterDate { get; set; }
-        public int Employees { get; set; }
+        //public int Employees { get; set; }
 
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<Employee> Employee { get; set; }

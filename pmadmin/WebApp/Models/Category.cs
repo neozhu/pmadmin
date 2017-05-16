@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApp.Models
 {
@@ -12,7 +13,14 @@ namespace WebApp.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
+        [MaxLength(255)]
+        public string Desc { get; set; }
+        public int CompanyId { get; set;}
 
-        public virtual ICollection<Product> Products { get; set; }
+        [ForeignKey("CompanyId")]
+   
+        public virtual Company Company { get; set; }
+
+        //public virtual ICollection<Product> Products { get; set; }
     }
 }
