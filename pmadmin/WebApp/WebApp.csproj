@@ -268,7 +268,6 @@
     <Compile Include="Models\Department.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\DepartmentMetadata.cs" />
     <Compile Include="Models\Discussion.cs" />
     <Compile Include="Models\Favorites.cs" />
     <Compile Include="Models\IdentityModels.cs" />
