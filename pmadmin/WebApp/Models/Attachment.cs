@@ -12,10 +12,13 @@ namespace WebApp.Models
         [Key]
         public int Id { get; set; }
         public int WorkItemId { get; set; }
+        [MaxLength(255)]
         public string FileName { get; set; }
+        [MaxLength(255)]
         public string Path { get; set; }
-
+        [MaxLength(20)]
         public string Type { get; set; }
+        [MaxLength(20)]
         public string Creator { get; set; }
         public DateTime Created { get; set; }
     }
