@@ -280,6 +280,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\MenuItemMetadata.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Order.cs">
       <SubType>Code</SubType>
     </Compile>
