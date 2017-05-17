@@ -71,23 +71,23 @@ namespace WebApp.Controllers
 		{
 			if (categories.updated != null)
 			{
-				foreach (var updated in categories.updated)
+				foreach (var item in categories.updated)
 				{
-					_categoryService.Update(updated);
+					_categoryService.Update(item);
 				}
 			}
 			if (categories.deleted != null)
 			{
-				foreach (var deleted in categories.deleted)
+				foreach (var item in categories.deleted)
 				{
-					_categoryService.Delete(deleted);
+					_categoryService.Delete(item);
 				}
 			}
 			if (categories.inserted != null)
 			{
-				foreach (var inserted in categories.inserted)
+				foreach (var item in categories.inserted)
 				{
-					_categoryService.Insert(inserted);
+					_categoryService.Insert(item);
 				}
 			}
 			await _unitOfWork.SaveChangesAsync();

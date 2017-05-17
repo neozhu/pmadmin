@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
 using WebApp.Models;
-namespace WebApp.Extensions
+namespace WebApp
 {
     public static class CacheExtensions
     {

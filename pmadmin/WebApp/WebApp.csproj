@@ -253,6 +253,10 @@
     <Compile Include="Migrations\201705160923326_dd.Designer.cs">
       <DependentUpon>201705160923326_dd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705170605425_dds.cs" />
+    <Compile Include="Migrations\201705170605425_dds.Designer.cs">
+      <DependentUpon>201705170605425_dds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -3542,11 +3546,6 @@
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\EditForm.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\EditForm.cshtml" />
-    <Content Include="Views\Categories\_ProductEditForm.cshtml" />
     <Content Include="Scripts\api\typehead_collection.json" />
     <Content Include="Scripts\easyui\demo\accordion\datagrid_data1.json" />
     <Content Include="Scripts\easyui\demo\combobox\combobox_data1.json" />
@@ -3610,6 +3609,10 @@
     <Content Include="Views\Companies\EditForm.cshtml" />
     <Content Include="Views\Companies\_DepartmentEditForm.cshtml" />
     <Content Include="Views\Companies\_EmployeeEditForm.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\EditForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Source\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
@@ -3631,6 +3634,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705160923326_dd.resx">
       <DependentUpon>201705160923326_dd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705170605425_dds.resx">
+      <DependentUpon>201705170605425_dds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -55,6 +55,7 @@ namespace WebApp.Models
         [MaxLength(20)]
         [Display(Name = "指派给", Description = "指派给")]
         public string AssignTo { get; set; }
+        [Display(Name = "类型", Description = "战略/项目/任务")]
         public int TypeId { get; set; }
         [ForeignKey("TypeId")]
         public virtual WorkItemType WorkItemType { get; set; }
