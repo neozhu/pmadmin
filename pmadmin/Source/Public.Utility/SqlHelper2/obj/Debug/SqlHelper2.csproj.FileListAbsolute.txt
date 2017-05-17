@@ -1,0 +1,5 @@
+D:\住商供应链协同项目\SCC\SourceCode\SGL.SCC\Public.Utility\SqlHelper2\bin\Debug\SqlHelper2.dll
+D:\住商供应链协同项目\SCC\SourceCode\SGL.SCC\Public.Utility\SqlHelper2\bin\Debug\SqlHelper2.pdb
+D:\住商供应链协同项目\SCC\SourceCode\SGL.SCC\Public.Utility\SqlHelper2\obj\Debug\SqlHelper2.dll
+D:\住商供应链协同项目\SCC\SourceCode\SGL.SCC\Public.Utility\SqlHelper2\obj\Debug\SqlHelper2.pdb
+D:\住商供应链协同项目\SCC\SourceCode\SGL.SCC\Public.Utility\SqlHelper2\obj\Debug\SqlHelper2.csprojResolveAssemblyReference.cache

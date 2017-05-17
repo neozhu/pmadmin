@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern.Ef6", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Pattern", "Source\Service.Pattern\Service.Pattern.csproj", "{86F86650-EE3C-4372-8FEC-40C2FE015022}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Public.Utility", "Public.Utility", "{264CAFEC-66E4-4528-9A50-F7EA259CE5AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlHelper2", "Source\Public.Utility\SqlHelper2\SqlHelper2.csproj", "{879158EF-EF85-4B55-91EF-21399E108CD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Release|x86.ActiveCfg = Release|Any CPU
 		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Release|x86.Build.0 = Release|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Debug|x86.Build.0 = Debug|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Release|x86.ActiveCfg = Release|Any CPU
+		{879158EF-EF85-4B55-91EF-21399E108CD7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,5 +76,6 @@ Global
 		{6E682A14-C872-4813-B620-76E108DEA683} = {83583A9A-0ABB-47CB-9B4F-508DD0E449F8}
 		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C} = {83583A9A-0ABB-47CB-9B4F-508DD0E449F8}
 		{86F86650-EE3C-4372-8FEC-40C2FE015022} = {83583A9A-0ABB-47CB-9B4F-508DD0E449F8}
+		{879158EF-EF85-4B55-91EF-21399E108CD7} = {264CAFEC-66E4-4528-9A50-F7EA259CE5AF}
 	EndGlobalSection
 EndGlobal
