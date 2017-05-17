@@ -233,10 +233,14 @@
     <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\MenuItemsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoleMenusController.cs" />
+    <Compile Include="Controllers\WorkItemDependenciesController.cs" />
+    <Compile Include="Controllers\WorkItemsController.cs" />
+    <Compile Include="Controllers\WorkItemTypesController.cs" />
     <Compile Include="Controllers\WorksController.cs" />
     <Compile Include="Extensions\AttributeHelper.cs" />
     <Compile Include="Extensions\ExcelHelper.cs" />
@@ -294,6 +298,7 @@
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MessageMetadata.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\NotificationMetadata.cs" />
     <Compile Include="Models\Order.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -315,7 +320,10 @@
     </Compile>
     <Compile Include="Models\WorkItem.cs" />
     <Compile Include="Models\WorkItemDependency.cs" />
+    <Compile Include="Models\WorkItemDependencyMetadata.cs" />
+    <Compile Include="Models\WorkItemMetadata.cs" />
     <Compile Include="Models\WorkItemType.cs" />
+    <Compile Include="Models\WorkItemTypeMetadata.cs" />
     <Compile Include="Models\WorkMetadata.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -334,6 +342,8 @@
     <Compile Include="Repositories\MenuItems\MenuItemRepository.cs" />
     <Compile Include="Repositories\Messages\MessageQuery.cs" />
     <Compile Include="Repositories\Messages\MessageRepository.cs" />
+    <Compile Include="Repositories\Notifications\NotificationQuery.cs" />
+    <Compile Include="Repositories\Notifications\NotificationRepository.cs" />
     <Compile Include="Repositories\OrderDetails\OrderDetailQuery.cs" />
     <Compile Include="Repositories\OrderDetails\OrderDetailRepository.cs" />
     <Compile Include="Repositories\Orders\OrderQuery.cs" />
@@ -342,6 +352,12 @@
     <Compile Include="Repositories\Products\ProductRepository.cs" />
     <Compile Include="Repositories\RoleMenus\RoleMenuQuery.cs" />
     <Compile Include="Repositories\RoleMenus\RoleMenuRepository.cs" />
+    <Compile Include="Repositories\WorkItemDependency\WorkItemDependencyQuery.cs" />
+    <Compile Include="Repositories\WorkItemDependency\WorkItemDependencyRepository.cs" />
+    <Compile Include="Repositories\WorkItems\WorkItemQuery.cs" />
+    <Compile Include="Repositories\WorkItems\WorkItemRepository.cs" />
+    <Compile Include="Repositories\WorkItemTypes\WorkItemTypeQuery.cs" />
+    <Compile Include="Repositories\WorkItemTypes\WorkItemTypeRepository.cs" />
     <Compile Include="Repositories\Works\WorkQuery.cs" />
     <Compile Include="Repositories\Works\WorkRepository.cs" />
     <Compile Include="Services\BaseCodes\BaseCodeService.cs" />
@@ -358,6 +374,8 @@
     <Compile Include="Services\MenuItems\MenuItemService.cs" />
     <Compile Include="Services\Messages\IMessageService.cs" />
     <Compile Include="Services\Messages\MessageService.cs" />
+    <Compile Include="Services\Notifications\INotificationService.cs" />
+    <Compile Include="Services\Notifications\NotificationService.cs" />
     <Compile Include="Services\OrderDetails\IOrderDetailService.cs" />
     <Compile Include="Services\OrderDetails\OrderDetailService.cs" />
     <Compile Include="Services\Orders\IOrderService.cs" />
@@ -366,6 +384,12 @@
     <Compile Include="Services\Products\ProductService.cs" />
     <Compile Include="Services\RoleMenus\IRoleMenuService.cs" />
     <Compile Include="Services\RoleMenus\RoleMenuService.cs" />
+    <Compile Include="Services\WorkItemDependency\IWorkItemDependencyService.cs" />
+    <Compile Include="Services\WorkItemDependency\WorkItemDependencyService.cs" />
+    <Compile Include="Services\WorkItems\IWorkItemService.cs" />
+    <Compile Include="Services\WorkItems\WorkItemService.cs" />
+    <Compile Include="Services\WorkItemTypes\IWorkItemTypeService.cs" />
+    <Compile Include="Services\WorkItemTypes\WorkItemTypeService.cs" />
     <Compile Include="Services\Works\IWorkService.cs" />
     <Compile Include="Services\Works\WorkService.cs" />
     <Compile Include="Startup.cs" />
@@ -3631,6 +3655,22 @@
     <Content Include="Views\Messages\Edit.cshtml" />
     <Content Include="Views\Messages\EditForm.cshtml" />
     <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Notifications\Index.cshtml" />
+    <Content Include="Views\Notifications\Create.cshtml" />
+    <Content Include="Views\Notifications\Edit.cshtml" />
+    <Content Include="Views\Notifications\EditForm.cshtml" />
+    <Content Include="Views\WorkItemTypes\Index.cshtml" />
+    <Content Include="Views\WorkItemTypes\Create.cshtml" />
+    <Content Include="Views\WorkItemTypes\Edit.cshtml" />
+    <Content Include="Views\WorkItemTypes\EditForm.cshtml" />
+    <Content Include="Views\WorkItemDependencies\Index.cshtml" />
+    <Content Include="Views\WorkItemDependencies\Create.cshtml" />
+    <Content Include="Views\WorkItemDependencies\Edit.cshtml" />
+    <Content Include="Views\WorkItemDependencies\EditForm.cshtml" />
+    <Content Include="Views\WorkItems\Index.cshtml" />
+    <Content Include="Views\WorkItems\Create.cshtml" />
+    <Content Include="Views\WorkItems\Edit.cshtml" />
+    <Content Include="Views\WorkItems\EditForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Source\Public.Utility\SqlHelper2\SqlHelper2.csproj">

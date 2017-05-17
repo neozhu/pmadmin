@@ -1,0 +1,412 @@
+﻿﻿
+
+
+
+
+
+
+@model WebApp.Models.WorkItem
+
+
+ @*@Html.HiddenFor(model => model.Id)*@
+
+ <!--输出form表单界面-->
+ <table class="table table-bordered">
+     <caption>
+     </caption>
+	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Id)  </td>
+	   <td> 
+						   			<input  disabled  id="@Html.IdFor(model => model.Id)" name="@Html.NameFor(model => model.Id)" tabindex="0" style="width:100%" class="easyui-numberbox" type="text" data-options="prompt:'Id',label:'Id:',required:true " />
+			  
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Title)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Title)" 
+				   name="@Html.NameFor(model => model.Title)" 
+				   value="@Html.ValueFor(model => model.Title)"
+				   tabindex="1" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'主题',
+								 label:'主题:',
+								 required:false ,validType:'length[0,255]'" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Desc)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Desc)" 
+				   name="@Html.NameFor(model => model.Desc)" 
+				   value="@Html.ValueFor(model => model.Desc)"
+				   tabindex="2" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'描述',
+								 label:'描述:',
+								 required:false " />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Tags)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Tags)" 
+				   name="@Html.NameFor(model => model.Tags)" 
+				   value="@Html.ValueFor(model => model.Tags)"
+				   tabindex="3" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'标记',
+								 label:'标记:',
+								 required:false ,validType:'length[0,255]'" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Notes)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Notes)" 
+				   name="@Html.NameFor(model => model.Notes)" 
+				   value="@Html.ValueFor(model => model.Notes)"
+				   tabindex="4" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'备注',
+								 label:'备注:',
+								 required:false ,validType:'length[0,255]'" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Priority)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Priority)"
+				   name="@Html.NameFor(model => model.Priority)" 
+				   value="@Html.ValueFor(model => model.Priority)"
+				   tabindex="5" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'优先级',
+								 label:'优先级:',
+								 required:true " />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Effort)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Effort)"
+				   name="@Html.NameFor(model => model.Effort)" 
+				   value="@Html.ValueFor(model => model.Effort)"
+				   tabindex="6" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'工作量',
+								 label:'工作量:',
+								 required:true " />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.BusinessValue)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.BusinessValue)"
+				   name="@Html.NameFor(model => model.BusinessValue)" 
+				   value="@Html.ValueFor(model => model.BusinessValue)"
+				   tabindex="7" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'业务价值',
+								 label:'业务价值:',
+								 required:true " />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.TimeCriticality)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.TimeCriticality)"
+				   name="@Html.NameFor(model => model.TimeCriticality)" 
+				   value="@Html.ValueFor(model => model.TimeCriticality)"
+				   tabindex="8" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'时间紧迫性',
+								 label:'时间紧迫性:',
+								 required:true " />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Risk)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Risk)"
+				   name="@Html.NameFor(model => model.Risk)" 
+				   value="@Html.ValueFor(model => model.Risk)"
+				   tabindex="9" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'风险',
+								 label:'风险:',
+								 required:true " />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Status)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Status)"
+				   name="@Html.NameFor(model => model.Status)" 
+				   value="@Html.ValueFor(model => model.Status)"
+				   tabindex="10" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'状态',
+								 label:'状态:',
+								 required:true " />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.FromDate)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.FromDate)" 
+			       name="@Html.NameFor(model => model.FromDate)" 
+				   tabindex="11" 
+				   style="width:100%" class="easyui-datebox" 
+				   type="text" 
+				   value="@Html.ValueFor(model => model.FromDate)"
+				   data-options="prompt:'开始时间',
+								 label:'开始时间:',
+								 required:true,
+								 formatter:dateformatter" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.EndDate)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.EndDate)" 
+			       name="@Html.NameFor(model => model.EndDate)" 
+				   tabindex="12" 
+				   style="width:100%" class="easyui-datebox" 
+				   type="text" 
+				   value="@Html.ValueFor(model => model.EndDate)"
+				   data-options="prompt:'结束时间',
+								 label:'结束时间:',
+								 required:true,
+								 formatter:dateformatter" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.ClosedDate)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.ClosedDate)" 
+			       name="@Html.NameFor(model => model.ClosedDate)" 
+				   tabindex="13" 
+				   style="width:100%" class="easyui-datebox" 
+				   type="text" 
+				   value="@Html.ValueFor(model => model.ClosedDate)"
+				   data-options="prompt:'结案时间',
+								 label:'结案时间:',
+								 required:false,
+								 formatter:dateformatter" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Owner)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Owner)" 
+				   name="@Html.NameFor(model => model.Owner)" 
+				   value="@Html.ValueFor(model => model.Owner)"
+				   tabindex="14" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'责任人',
+								 label:'责任人:',
+								 required:false ,validType:'length[0,20]'" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Creator)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Creator)" 
+				   name="@Html.NameFor(model => model.Creator)" 
+				   value="@Html.ValueFor(model => model.Creator)"
+				   tabindex="15" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'创建人',
+								 label:'创建人:',
+								 required:false ,validType:'length[0,20]'" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.AssignTo)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.AssignTo)" 
+				   name="@Html.NameFor(model => model.AssignTo)" 
+				   value="@Html.ValueFor(model => model.AssignTo)"
+				   tabindex="16" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'指派给',
+								 label:'指派给:',
+								 required:false ,validType:'length[0,20]'" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.TypeId)  </td>
+	   <td> 
+			
+			<input id="@Html.IdFor(model => model.TypeId)"
+			       name="@Html.NameFor(model => model.TypeId)"
+				   value="@Html.ValueFor(model => model.TypeId)"
+				   class="easyui-combobox" data-options="
+						prompt:'类型' ,
+						label:'类型:' ,
+						required:true ,
+						valueField: 'Id',
+						textField: 'Name' ,
+						url: '/WorkItems/GetWorkItemTypes' ,
+						onSelect: function(item){
+						//console.log(item);
+				}">
+
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Visibility)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Visibility)"
+				   name="@Html.NameFor(model => model.Visibility)" 
+				   value="@Html.ValueFor(model => model.Visibility)"
+				   tabindex="18" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'是否可见',
+								 label:'是否可见:',
+								 required:true " />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.CompanyId)  </td>
+	   <td> 
+			
+			<input id="@Html.IdFor(model => model.CompanyId)"
+			       name="@Html.NameFor(model => model.CompanyId)"
+				   value="@Html.ValueFor(model => model.CompanyId)"
+				   class="easyui-combobox" data-options="
+						prompt:'企业' ,
+						label:'企业:' ,
+						required:true ,
+						valueField: 'Id',
+						textField: 'Name' ,
+						url: '/WorkItems/GetCompanies' ,
+						onSelect: function(item){
+						//console.log(item);
+				}">
+
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.CategoryId)  </td>
+	   <td> 
+			
+			<input id="@Html.IdFor(model => model.CategoryId)"
+			       name="@Html.NameFor(model => model.CategoryId)"
+				   value="@Html.ValueFor(model => model.CategoryId)"
+				   class="easyui-combobox" data-options="
+						prompt:'战略类别' ,
+						label:'战略类别:' ,
+						required:true ,
+						valueField: 'Id',
+						textField: 'Name' ,
+						url: '/WorkItems/GetCategories' ,
+						onSelect: function(item){
+						//console.log(item);
+				}">
+
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Created)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Created)" 
+			       name="@Html.NameFor(model => model.Created)" 
+				   tabindex="21" 
+				   style="width:100%" class="easyui-datebox" 
+				   type="text" 
+				   value="@Html.ValueFor(model => model.Created)"
+				   data-options="prompt:'创建时间',
+								 label:'创建时间:',
+								 required:true,
+								 formatter:dateformatter" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.LastUpdated)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.LastUpdated)" 
+			       name="@Html.NameFor(model => model.LastUpdated)" 
+				   tabindex="22" 
+				   style="width:100%" class="easyui-datebox" 
+				   type="text" 
+				   value="@Html.ValueFor(model => model.LastUpdated)"
+				   data-options="prompt:'最后修改时间',
+								 label:'最后修改时间:',
+								 required:false,
+								 formatter:dateformatter" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.ParentId)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.ParentId)"
+				   name="@Html.NameFor(model => model.ParentId)" 
+				   value="@Html.ValueFor(model => model.ParentId)"
+				   tabindex="23" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'ParentId',
+								 label:'ParentId:',
+								 required:false " />
+			              
+				   </td>
+	   	   </tr>
+	   	        @*<tfoot>
+        <tr>
+           
+        <tr>
+    </tfoot>*@
+</table>
+  <!--输出form表单界面-->
+
+<!--========================================================================================-->
+  
+
+ 
+

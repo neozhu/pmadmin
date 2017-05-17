@@ -1,0 +1,69 @@
+﻿﻿
+
+
+
+
+
+
+@model WebApp.Models.WorkItemDependency
+
+
+ @*@Html.HiddenFor(model => model.Id)*@
+
+ <!--输出form表单界面-->
+ <table class="table table-bordered">
+     <caption>
+     </caption>
+	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Id)  </td>
+	   <td> 
+						   			<input  disabled  id="@Html.IdFor(model => model.Id)" name="@Html.NameFor(model => model.Id)" tabindex="0" style="width:100%" class="easyui-numberbox" type="text" data-options="prompt:'Id',label:'Id:',required:true " />
+			  
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.WorkItemId)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.WorkItemId)"
+				   name="@Html.NameFor(model => model.WorkItemId)" 
+				   value="@Html.ValueFor(model => model.WorkItemId)"
+				   tabindex="1" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'WorkItemId',
+								 label:'WorkItemId:',
+								 required:true " />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.DependentId)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.DependentId)"
+				   name="@Html.NameFor(model => model.DependentId)" 
+				   value="@Html.ValueFor(model => model.DependentId)"
+				   tabindex="2" 
+				   style="width:100%" 
+				   class="easyui-numberbox" 
+				   type="text" 
+				   data-options="prompt:'DependentId',
+								 label:'DependentId:',
+								 required:true " />
+			              
+				   </td>
+	   	    		<td></td> <td></td>
+		     </tr>
+	    @*<tfoot>
+        <tr>
+           
+        <tr>
+    </tfoot>*@
+</table>
+  <!--输出form表单界面-->
+
+<!--========================================================================================-->
+  
+
+ 
+

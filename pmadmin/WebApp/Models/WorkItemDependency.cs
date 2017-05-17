@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Repository.Pattern.Ef6;
 
 namespace WebApp.Models
 {
-    public class WorkItemDependency
+    public partial class WorkItemDependency:Entity
     {
         [Key]
         public int Id { get; set;}

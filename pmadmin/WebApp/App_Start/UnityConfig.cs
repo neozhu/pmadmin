@@ -117,6 +117,22 @@ namespace WebApp.App_Start
 
             container.RegisterType<IRepositoryAsync<DataTableImportMapping>, Repository<DataTableImportMapping>>();
             container.RegisterType<IDataTableImportMappingService, DataTableImportMappingService>();
+
+
+
+            container.RegisterType<IRepositoryAsync<WorkItemType>, Repository<WorkItemType>>();
+            container.RegisterType<IWorkItemTypeService, WorkItemTypeService>();
+
+
+            container.RegisterType<IRepositoryAsync<WorkItem>, Repository<WorkItem>>();
+            container.RegisterType<IWorkItemService, WorkItemService>();
+
+
+            container.RegisterType<IRepositoryAsync<WorkItemDependency>, Repository<WorkItemDependency>>();
+            container.RegisterType<IWorkItemDependencyService, WorkItemDependencyService>();
+
+            container.RegisterType<IRepositoryAsync<Notification>, Repository<Notification>>();
+            container.RegisterType<INotificationService, NotificationService>();
         }
     }
 }
