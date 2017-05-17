@@ -1,0 +1,147 @@
+﻿﻿
+
+
+
+
+
+
+@model WebApp.Models.Company
+
+
+ @*@Html.HiddenFor(model => model.Id)*@
+
+ <!--输出form表单界面-->
+ <table class="table table-bordered">
+     <caption>
+     </caption>
+	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Id)  </td>
+	   <td> 
+						   			<input  disabled  id="@Html.IdFor(model => model.Id)" name="@Html.NameFor(model => model.Id)" tabindex="0" style="width:100%" class="easyui-numberbox" type="text" data-options="prompt:'Id',label:'Id:',required:true " />
+			  
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Name)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Name)" 
+				   name="@Html.NameFor(model => model.Name)" 
+				   value="@Html.ValueFor(model => model.Name)"
+				   tabindex="1" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'Name',
+								 label:'Name:',
+								 required:false ,validType:'length[0,50]'" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Logo)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Logo)" 
+				   name="@Html.NameFor(model => model.Logo)" 
+				   value="@Html.ValueFor(model => model.Logo)"
+				   tabindex="2" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'Logo',
+								 label:'Logo:',
+								 required:false ,validType:'length[0,20]'" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.Domain)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Domain)" 
+				   name="@Html.NameFor(model => model.Domain)" 
+				   value="@Html.ValueFor(model => model.Domain)"
+				   tabindex="3" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'Domain',
+								 label:'Domain:',
+								 required:false ,validType:'length[0,255]'" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Address)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Address)" 
+				   name="@Html.NameFor(model => model.Address)" 
+				   value="@Html.ValueFor(model => model.Address)"
+				   tabindex="4" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'Address',
+								 label:'Address:',
+								 required:false ,validType:'length[0,255]'" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.City)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.City)" 
+				   name="@Html.NameFor(model => model.City)" 
+				   value="@Html.ValueFor(model => model.City)"
+				   tabindex="5" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'City',
+								 label:'City:',
+								 required:false ,validType:'length[0,50]'" />
+			              
+				   </td>
+	   	   </tr>
+	   	    <tr>
+      	   <td class="control-label">   @Html.DisplayNameFor(model => model.Province)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.Province)" 
+				   name="@Html.NameFor(model => model.Province)" 
+				   value="@Html.ValueFor(model => model.Province)"
+				   tabindex="6" 
+				   style="width:100%" 
+				   class="easyui-textbox" 
+				   type="text" 
+				   data-options="prompt:'Province',
+								 label:'Province:',
+								 required:false ,validType:'length[0,50]'" />
+			              
+				   </td>
+	   	   <td class="control-label">   @Html.DisplayNameFor(model => model.RegisterDate)  </td>
+	   <td> 
+			
+			  			<input id="@Html.IdFor(model => model.RegisterDate)" 
+			       name="@Html.NameFor(model => model.RegisterDate)" 
+				   tabindex="7" 
+				   style="width:100%" class="easyui-datebox" 
+				   type="text" 
+				   value="@Html.ValueFor(model => model.RegisterDate)"
+				   data-options="prompt:'RegisterDate',
+								 label:'RegisterDate:',
+								 required:true,
+								 formatter:dateformatter" />
+			              
+				   </td>
+	   	   </tr>
+	   	        @*<tfoot>
+        <tr>
+           
+        <tr>
+    </tfoot>*@
+</table>
+  <!--输出form表单界面-->
+
+<!--========================================================================================-->
+  
+
+ 
+

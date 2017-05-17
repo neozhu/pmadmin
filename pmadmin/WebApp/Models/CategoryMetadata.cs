@@ -4,28 +4,14 @@ using System.Collections.Generic;
 
 namespace WebApp.Models
 {
-    [MetadataType(typeof(CategoryMetadata))]
+    //[MetadataType(typeof(CategoryMetadata))]
     public partial class Category
     {
     }
 
     public partial class CategoryMetadata
     {
-        [Display(Name = "Company")]
-        public Company Company { get; set; }
-
-        [Required(ErrorMessage = "Please enter : Id")]
-        [Display(Name = "Id")]
-        public int Id { get; set; }
-
-        [Display(Name = "Name")]
-        public string Name { get; set; }
-
-        [Display(Name = "Desc")]
-        public string Desc { get; set; }
-
-        [Display(Name = "CompanyId")]
-        public int CompanyId { get; set; }
+         
 
     }
 

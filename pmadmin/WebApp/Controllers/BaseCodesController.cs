@@ -63,6 +63,8 @@ namespace WebApp.Controllers
         [HttpPost]
         public ActionResult SaveData(BaseCodeChangeViewModel basecodes)
         {
+            var dic = new Dictionary<string, string>();
+            
             if (basecodes.updated != null)
             {
                 foreach (var updated in basecodes.updated)

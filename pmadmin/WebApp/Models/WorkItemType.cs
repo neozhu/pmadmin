@@ -11,7 +11,7 @@ namespace WebApp.Models
     {
         [Key]
         public int Id { get; set; }
-
+        [Display(Name = "工作项类型",Description ="战略,项目，任务")]
         public string Name { get; set; }
     }
 }

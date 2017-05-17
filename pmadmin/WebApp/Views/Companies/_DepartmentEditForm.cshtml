@@ -1,0 +1,77 @@
+﻿
+@model WebApp.Models.Department
+
+
+<div class="ibox-content">
+ <!--输出form表单界面-->
+ <table class="table table-bordered">
+     <caption>
+     </caption>
+     <tr>
+     	  
+  <td class="control-label">   @Html.DisplayNameFor(model => model.Id)  </td>
+	   <td> 
+			   											<input  disabled  id="@Html.IdFor(model => model.Id)" name="@Html.NameFor(model => model.Id)" tabindex="0" style="width:100%" class="easyui-numberbox" type="text" data-options="prompt:'Id',label:'Id:',required:true " />
+								  
+	  
+  <td class="control-label">   @Html.DisplayNameFor(model => model.Name)  </td>
+	   <td> 
+			   
+											<input id="@Html.IdFor(model => model.Name)" 
+							name="@Html.NameFor(model => model.Name)" 
+							value="@Html.ValueFor(model => model.Name)"
+							tabindex="1" 
+							style="width:100%" 
+							class="easyui-textbox" 
+							type="text" 
+							data-options="prompt:'Name',
+								 label:'Name:',
+								 required:false ,validType:'length[0,50]'" />
+					             
+			 
+     <tr>
+     	  
+  <td class="control-label">   @Html.DisplayNameFor(model => model.Manager)  </td>
+	   <td> 
+			   
+											<input id="@Html.IdFor(model => model.Manager)" 
+							name="@Html.NameFor(model => model.Manager)" 
+							value="@Html.ValueFor(model => model.Manager)"
+							tabindex="2" 
+							style="width:100%" 
+							class="easyui-textbox" 
+							type="text" 
+							data-options="prompt:'Manager',
+								 label:'Manager:',
+								 required:false ,validType:'length[0,20]'" />
+					             
+			 
+	  
+  <td class="control-label">   @Html.DisplayNameFor(model => model.CompanyId)  </td>
+	   <td> 
+			   
+			<input id="@Html.IdFor(model => model.CompanyId)"
+			       name="@Html.NameFor(model => model.CompanyId)"
+				   value="@Html.ValueFor(model => model.CompanyId)"
+				   class="easyui-combobox" data-options="
+						prompt:'CompanyId' ,
+						label:'CompanyId:' ,
+						required:true ,
+						valueField: 'Id',
+						textField: 'Name' ,
+						url: '/Companies/GetCompanies' ,
+						onSelect: function(item){
+						//console.log(item);
+				}">
+
+				
+	        @*<tfoot>
+        <tr>
+           
+        <tr>
+    </tfoot>*@
+</table>
+</div>
+
+
+ 
