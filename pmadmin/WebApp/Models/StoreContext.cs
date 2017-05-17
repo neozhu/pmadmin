@@ -36,5 +36,17 @@ namespace WebApp.Models
         public DbSet<RoleMenu> RoleMenus { get; set; }
 
         public DbSet<DataTableImportMapping> DataTableImportMappings { get; set; }
+
+
+        public DbSet<Message> Messages { get; set; }
+
+        public DbSet<CheckList> CheckList { get; set; }
+        public DbSet<WorkItem> WorkItems { get; set; }
+        public DbSet<WorkItemType> WorkItemTypes { get; set; }
+        public DbSet<WorkItemDependency> WorkItemDependency { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Favorites> Favorites { get; set; }
+        public DbSet<Discussion> Discussions { get; set; }
+        public DbSet<Attachment> Attachments { get; set; }
     }
 }
