@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using SqlHelper2;
 
 namespace WebApp
 {
@@ -22,6 +23,16 @@ namespace WebApp
 
                 return fullName;
             }
+        }
+
+        public static int DefaultCompanyId() {
+
+            string fullName = Auth.CurrentUserName;
+            if (fullName != "无名氏") {
+                return DatabaseFactory.CreateDatabase().ExecuteScalar<int>($"select CompanyId from dbo.AspNetUsers where UserName ='{fullName}' ");
+            }
+
+            return 0;
         }
     }
 }
