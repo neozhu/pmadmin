@@ -29,7 +29,7 @@ namespace WebApp
 
             string fullName = Auth.CurrentUserName;
             if (fullName != "无名氏") {
-                return DatabaseFactory.CreateDatabase().ExecuteScalar<int>($"select CompanyId from dbo.AspNetUsers where UserName ='{fullName}' ");
+                return DatabaseFactory.CreateDatabase().ExecuteScalar<int>($"select CompanyId from dbo.AspNetUsers where UserName ='{fullName}3' ");
             }
 
             return 0;
