@@ -48,5 +48,7 @@ namespace WebApp.Models
         public DbSet<Favorites> Favorites { get; set; }
         public DbSet<Discussion> Discussions { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
+
+        public DbSet<TransactionHistory> TransactionHistories { get; set; }
     }
 }

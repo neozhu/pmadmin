@@ -318,6 +318,7 @@
     <Compile Include="Models\Task.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\TransactionHistory.cs" />
     <Compile Include="Models\WorkItem.cs" />
     <Compile Include="Models\WorkItemDependency.cs" />
     <Compile Include="Models\WorkItemDependencyMetadata.cs" />
@@ -3372,7 +3373,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout_.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
