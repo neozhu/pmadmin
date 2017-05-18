@@ -32,127 +32,162 @@
                 <th data-options="field:'Title',width:140,editor:{type:'textbox',options:{required:true} } ">@Html.DisplayNameFor(model => model.Title)</th>
                 <th data-options="field:'QQ',width:140,editor:{type:'textbox',options:{required:true} } ">@Html.DisplayNameFor(model => model.QQ)</th>
                 <th data-options="field:'WeiXin',width:140,editor:{type:'textbox',options:{required:true} } ">@Html.DisplayNameFor(model => model.WeiXin)</th>
-                <th data-options="field:'CompanyId',width:140,editor:{type:'textbox',options:{required:true} } ">@Html.DisplayNameFor(model => model.CompanyId)</th>
-                <th data-options="field:'DepartmentId',width:140,editor:{type:'textbox',options:{required:true} } ">@Html.DisplayNameFor(model => model.DepartmentId)</th>
-                
-                <th data-options="field:'Email',width:140,editor:{type:'textbox',options:{required:true} } ">@Html.DisplayNameFor(model => model.Email)</th>
-                <th data-options="field:'PhoneNumber',width:140,editor:{type:'textbox',options:{required:false} } ">@Html.DisplayNameFor(model => model.PhoneNumber)</th>
-                <th data-options="field:'AccessFailedCount',width:160  ">@Html.DisplayNameFor(model => model.AccessFailedCount)</th>
-                <th data-options="field:'LockoutEnabled',width:160  ">@Html.DisplayNameFor(model => model.LockoutEnabled)</th>
-                <th data-options="field:'LockoutEndDateUtc',width:160  ">@Html.DisplayNameFor(model => model.LockoutEndDateUtc)</th>
+                <th data-options="field:'CompanyId' ,width:100,sortable:true,resizable:true,
+						formatter:function(value,row){
+							return row.CompanyName;
+						},
+						editor:{
+							type:'combobox',
+							options:{
+								prompt:'企业' ,
+								valueField:'Id',
+								textField:'Name',
+								method:'get',
+								url:'/WorkItems/GetCompanies',
+								required:true,
+                                onSelect:function(record) 
+                                                {
+                                                        console.log(record);
+                                                        $dg.datagrid('getRows')[editIndex]['CompanyId'] = record.Id;
+                                                        var ed = $dg.datagrid('getEditor', { index: editIndex, field: 'DepartmentId' });
+                                                        $(ed.target).combobox('reload','/Departments/GetByCompanyId?companyId=' + record.Id );
+                                                }
+							}
+						}">@Html.DisplayNameFor(model => model.CompanyId)</th>
+                        <th data-options="field:'DepartmentId',width:140,
+                            formatter:function(value,row){
+							return row.DepartmentName;
+						    },
+                            editor:{
+                            type:'combobox',
+                            options:{
+                                method:'get',
+								url:'/Departments/GetByCompanyId?companyId=0',
+                                prompt:'部门',
+                                required:true,
+                                valueField:'Id',
+								textField:'Name',
+                            } 
+                            } ">@Html.DisplayNameFor(model => model.DepartmentId)</th>
+
+                        <th data-options="field:'Email',width:140,editor:{type:'textbox',options:{required:true} } ">@Html.DisplayNameFor(model => model.Email)</th>
+                        <th data-options="field:'PhoneNumber',width:140,editor:{type:'textbox',options:{required:false} } ">@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                        <th data-options="field:'AccessFailedCount',width:160  ">@Html.DisplayNameFor(model => model.AccessFailedCount)</th>
+                        <th data-options="field:'LockoutEnabled',width:160  ">@Html.DisplayNameFor(model => model.LockoutEnabled)</th>
+                        <th data-options="field:'LockoutEndDateUtc',width:160  ">@Html.DisplayNameFor(model => model.LockoutEndDateUtc)</th>
 
 
-            </tr>
-        </thead>
+                    </tr>
+                </thead>
 
 
-    </table>
-    <div id="users_toolbar" style="height:auto">
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-plus',plain:true" onclick="append()">Append</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit()">Remove</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept()">Accept</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-undo',plain:true" onclick="reject()">Reject</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="getChanges()">GetChanges</a>
-    </div>
-</div>
+            </table>
+            <div id="users_toolbar" style="height:auto">
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-plus',plain:true" onclick="append()">Append</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit()">Remove</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept()">Accept</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-undo',plain:true" onclick="reject()">Reject</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="getChanges()">GetChanges</a>
+            </div>
+        </div>
 
-@section Scripts {
-    <script type="text/javascript">
-        var $dg = $('#users_datagrid');
-        var editIndex = undefined;
-        function endEditing() {
-            if (editIndex == undefined) { return true }
-            if ($dg.datagrid('validateRow', editIndex)) {
-
-
-                $dg.datagrid('endEdit', editIndex);
-                //console.log(2,$dg.datagrid('getRows')[editIndex]);
-
-                editIndex = undefined;
+        @section Scripts {
+            <script type="text/javascript">
+                var $dg = $('#users_datagrid');
+                var editIndex = undefined;
+                function endEditing() {
+                    if (editIndex == undefined) { return true }
+                    if ($dg.datagrid('validateRow', editIndex)) {
 
 
-                return true;
-            } else {
-                return false;
-            }
-        }
-        function onClickCell(index, field) {
-            if (editIndex != index) {
-                if (endEditing()) {
-                    $dg.datagrid('selectRow', index)
-                        .datagrid('beginEdit', index);
-                    var ed = $dg.datagrid('getEditor', { index: index, field: field });
-                    if (ed) {
-                        ($(ed.target).data('textbox') ? $(ed.target).textbox('textbox') : $(ed.target)).focus();
+                        $dg.datagrid('endEdit', editIndex);
+                        //console.log(2,$dg.datagrid('getRows')[editIndex]);
+
+                        editIndex = undefined;
+
+
+                        return true;
+                    } else {
+                        return false;
                     }
-                    editIndex = index;
-                } else {
-                    $dg.datagrid('selectRow', editIndex);
                 }
-            }
-        }
-        function append() {
-            if (endEditing()) {
-                $dg.datagrid('appendRow', { status: 'P' });
-                editIndex = $dg.datagrid('getRows').length - 1;
-                $dg.datagrid('selectRow', editIndex)
-                    .datagrid('beginEdit', editIndex);
-            }
-        }
-        function removeit() {
-            if (editIndex == undefined) { return }
-            $dg.datagrid('cancelEdit', editIndex)
-                .datagrid('deleteRow', editIndex);
-            editIndex = undefined;
-        }
-        function accept() {
-            if (endEditing()) {
-                if ($dg.datagrid('getChanges').length) {
-                    var inserted = $dg.datagrid('getChanges', "inserted");
-                    var deleted = $dg.datagrid('getChanges', "deleted");
-                    var updated = $dg.datagrid('getChanges', "updated");
-                    var effectRow = new Object();
-                    if (inserted.length) {
-                        effectRow.inserted = inserted;
-                    }
-                    if (deleted.length) {
-                        effectRow.deleted = deleted;
-                    }
-                    if (updated.length) {
-                        effectRow.updated = updated;
-                    }
-                    console.log(JSON.stringify(effectRow));
-                    $.post("/AccountManage/SaveData", effectRow, function (rsp) {
-                        console.log(rsp);
-                        if (rsp.Success) {
-                            $.messager.alert("提示", "提交成功！");
-                            $dg.datagrid('acceptChanges');
-                            //$dg.datagrid('reload');
+                function onClickCell(index, field) {
+                    if (editIndex != index) {
+                        if (endEditing()) {
+                            $dg.datagrid('selectRow', index)
+                                .datagrid('beginEdit', index);
+                            var ed = $dg.datagrid('getEditor', { index: index, field: field });
+                            if (ed) {
+                                ($(ed.target).data('textbox') ? $(ed.target).textbox('textbox') : $(ed.target)).focus();
+                            }
+                            editIndex = index;
+                        } else {
+                            $dg.datagrid('selectRow', editIndex);
                         }
-                    }, "json").fail(function () {
-                        $.messager.alert("错误", "提交错误了！", 'error');
+                    }
+                }
+                function append() {
+                    if (endEditing()) {
+                        $dg.datagrid('appendRow', { status: 'P' });
+                        editIndex = $dg.datagrid('getRows').length - 1;
+                        $dg.datagrid('selectRow', editIndex)
+                            .datagrid('beginEdit', editIndex);
+                    }
+                }
+                function removeit() {
+                    if (editIndex == undefined) { return }
+                    $dg.datagrid('cancelEdit', editIndex)
+                        .datagrid('deleteRow', editIndex);
+                    editIndex = undefined;
+                }
+                function accept() {
+                    if (endEditing()) {
+                        if ($dg.datagrid('getChanges').length) {
+                            var inserted = $dg.datagrid('getChanges', "inserted");
+                            var deleted = $dg.datagrid('getChanges', "deleted");
+                            var updated = $dg.datagrid('getChanges', "updated");
+                            var effectRow = new Object();
+                            if (inserted.length) {
+                                effectRow.inserted = inserted;
+                            }
+                            if (deleted.length) {
+                                effectRow.deleted = deleted;
+                            }
+                            if (updated.length) {
+                                effectRow.updated = updated;
+                            }
+                            console.log(JSON.stringify(effectRow));
+                            $.post("/AccountManage/SaveData", effectRow, function (rsp) {
+                                console.log(rsp);
+                                if (rsp.Success) {
+                                    $.messager.alert("提示", "提交成功！");
+                                    $dg.datagrid('acceptChanges');
+                                    //$dg.datagrid('reload');
+                                }
+                            }, "json").fail(function () {
+                                $.messager.alert("错误", "提交错误了！", 'error');
 
-                    });
+                            });
 
+                        }
+
+                        $dg.datagrid('acceptChanges');
+                    }
+                }
+                function reject() {
+                    $dg.datagrid('rejectChanges');
+                    editIndex = undefined;
+                }
+                function getChanges() {
+                    var rows = $dg.datagrid('getChanges');
+                    alert(rows.length + ' rows are changed!');
                 }
 
-                $dg.datagrid('acceptChanges');
-            }
-        }
-        function reject() {
-            $dg.datagrid('rejectChanges');
-            editIndex = undefined;
-        }
-        function getChanges() {
-            var rows = $dg.datagrid('getChanges');
-            alert(rows.length + ' rows are changed!');
-        }
 
+                $(function () {
 
-        $(function () {
-
-            $dg.datagrid('enableFilter');
-        })
-    </script>
-}
+                    $dg.datagrid('enableFilter');
+                })
+            </script>
+        }
 

@@ -245,7 +245,12 @@ namespace WebApp.Controllers
 			return RedirectToAction("Index");
 		}
 
+        public async Task<ActionResult> GetByCompanyId(int companyId = 0) {
 
+            var data = await _departmentService.Queryable().Where(x => x.CompanyId == companyId).ToListAsync();
+            var rows = data.Select(x => new { Id = x.Id, Name = x.Name });
+            return Json(rows, JsonRequestBehavior.AllowGet);
+        }
        
 
  

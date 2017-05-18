@@ -15,6 +15,7 @@ using WebApp.Models;
 using WebApp.Extensions;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using WebApp.Services;
 
 namespace WebApp.Controllers
 {
@@ -22,15 +23,19 @@ namespace WebApp.Controllers
     public class AccountManageController : Controller
     {
         private ApplicationUserManager _userManager;
+        private readonly IDepartmentService _depService;
+        private readonly ICompanyService _copService;
+       
 
-        public AccountManageController()
-        {
-        }
-
-        public AccountManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager,
+            IDepartmentService depService,
+           ICompanyService copService)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+
+            this._depService = depService;
+            this._copService = copService;
         }
         public ApplicationUserManager UserManager
         {
@@ -98,7 +103,7 @@ namespace WebApp.Controllers
                 }
             }
             totalCount = users.Count();
-            var datalist = users.Skip(page-1).Take(rows);
+            var datalist = users.Skip(page-1).Take(rows).ToList();
             var datarows = datalist.Select(n => new
             {
                 Id = n.Id,
@@ -107,7 +112,9 @@ namespace WebApp.Controllers
                 CompanyId=n.CompanyId,
                 DepartmentId=n.DepartmentId,
                 Title=n.Title,
-                QQ=n.QQ,
+                DepartmentName = _depService.Queryable().Where(x=>x.Id==n.DepartmentId).FirstOrDefault()?.Name,
+                CompanyName = _copService.Queryable().Where(x => x.Id == n.CompanyId).FirstOrDefault()?.Name,
+                QQ =n.QQ,
                 WeiXin=n.WeiXin,
                 PhoneNumber = n.PhoneNumber,
                 AccessFailedCount = n.AccessFailedCount,
