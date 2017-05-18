@@ -80,7 +80,7 @@ namespace WebApp.Controllers
         [HttpGet]
         public ActionResult GetData(int page = 1, int rows = 10, string sort = "Id", string order = "asc", string filterRules = "")
         {
-            var idd = Auth.DefaultCompanyId();
+            //var idd = Auth.DefaultCompanyId();
             var filters = JsonConvert.DeserializeObject<IEnumerable<filterRule>>(filterRules);
             int totalCount = 0;
 

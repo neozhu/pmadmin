@@ -9,6 +9,7 @@ namespace WebApp.Models
 {
     public partial class TransactionHistory:Entity
     {
+        [Key]
         public int Id { get; set; }
    
         [Required]

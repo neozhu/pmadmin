@@ -268,6 +268,10 @@
     <Compile Include="Migrations\201705170703412_table.Designer.cs">
       <DependentUpon>201705170703412_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705180324195_h.cs" />
+    <Compile Include="Migrations\201705180324195_h.Designer.cs">
+      <DependentUpon>201705180324195_h.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -3703,6 +3707,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705170703412_table.resx">
       <DependentUpon>201705170703412_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705180324195_h.resx">
+      <DependentUpon>201705180324195_h.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -49,8 +49,8 @@ namespace SqlHelper2 {
 
         public T ExecuteScalar<T>(string sql, object parameters) {
             PrepareCommand(sql, parameters);
-
-            return (T) Command.ExecuteScalar();
+            var result = Command.ExecuteScalar();
+            return result == null ? default(T) : (T)result;
         }
 
         public void BulkCopy(DataTable table, int batchSize) {
